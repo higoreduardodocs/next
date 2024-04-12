@@ -1,9 +1,11 @@
-# :desktop_computer: Next Application
+SSR application developed in Next
 
-Applications developed in Next and other auxiliary technologies
+> :fire: Development
 
-> SSR App:
+```
+  cd web && yarn dev
+```
 
-- Anime vault: [ssr-app/anime-vault](https://github.com/higoreduardodocs/next/tree/ssr-app/anime-vault)
+> :thought_balloon: `ByteGrad`
 
-> :copyright: [Higor Eduardo Docs](https://github.com/higoreduardodocs)
+![Cover](./assets/cover.png)
