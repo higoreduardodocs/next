@@ -4,10 +4,6 @@ Applications developed in Next and other auxiliary technologies
 
 > SSR App:
 
-- Anime vault: [ssr-app/anime-vault](link)
-- Car hub: [ssr-/car-hub](link)
-
-> Clone App:
-- Notion: [clone-app/notion](link)
+- Anime vault: [ssr-app/anime-vault](https://github.com/higoreduardodocs/next/tree/ssr-app/anime-vault)
 
 > :copyright: [Higor Eduardo Docs](https://github.com/higoreduardodocs)
