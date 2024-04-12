@@ -1,22 +1,15 @@
-# :desktop_computer: Anime List Application
+SSR application developed in Next
 
-<img src="./assets/cover.png" alt="Cover projeto" />
+> :fire: Development
 
-## :briefcase: Stacks
+```
+  cd web && yarn dev
+```
 
-- React (JavaScript/TypeScript)
+> :gear: Environment Variables
 
-## :hammer: Tools
+- Server URL: NEXT_PUBLIC_SERVER_API `web`
 
-- Git
-- NodeJs
-- Yarn
-- VS Code
+> :thought_balloon: `JS Mastery`
 
-## :fire: Run
-
-- Development (Port 300): `yarn dev`
-
-## :triangular_flag_on_post: Environment Variables
-
-- API URL: `NEXT_PUBLIC_SERVER_API`
+![Cover](./assets/cover.png)
