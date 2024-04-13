@@ -1,7 +1,15 @@
 import { RequestHandler } from 'express'
 
 import { addEventSchema, updateEventSchema } from '../types/types'
-import { add, getAll, getOne, remove, update } from '../services/event-service'
+import { update as updatePeople } from '../services/people-service'
+import {
+  add,
+  doMatches,
+  getAll,
+  getOne,
+  remove,
+  update,
+} from '../services/event-service'
 
 export const addEvent: RequestHandler = async (req, res) => {
   const body = addEventSchema.safeParse(req.body)
@@ -19,7 +27,17 @@ export const updateEvent: RequestHandler = async (req, res) => {
   if (!body.success) return res.status(400).json({ error: 'Dados inválidos' })
 
   const updateEvent = await update(parseInt(id), body.data)
-  if (updateEvent) return res.status(200).json({ event: updateEvent })
+  if (updateEvent) {
+    if (updateEvent.status) {
+      const response = await doMatches(parseInt(id))
+      if (!response)
+        return res.status(400).json({ error: 'Sorteio invalidado' })
+    } else {
+      await updatePeople({ eventId: parseInt(id) }, { matched: '' })
+    }
+
+    return res.status(200).json({ event: updateEvent })
+  }
 
   return res.status(500).json({ error: 'Ocorreu um erro' })
 }

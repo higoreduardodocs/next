@@ -14,3 +14,6 @@ export const validatePassword = (password: string) => {
   const currentPassword = getToday().split('/').join('')
   return password === currentPassword
 }
+
+export const encryptMatch = (id: number): string =>
+  `${process.env.DEFAULT_TOKEN}${id}${process.env.DEFAULT_TOKEN}`

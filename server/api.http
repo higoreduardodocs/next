@@ -25,17 +25,18 @@ Authorization: Token default_token13042024
 
 {
   "title": "Evento 1",
-  "description": "Fake description"
+  "description": "Descrição do evento 1",
+  "grouped": true
 }
 
 ### PATCH /admin/events/:id
-PATCH http://localhost:3000/admins/events/2 HTTP/1.1
+PATCH http://localhost:3000/admins/events/1 HTTP/1.1
 Content-Type: application/json
 Authorization: Token default_token13042024
 
 {
-  "title": "Fake title",
-  "description": "Fake description",
+  "title": "Evento 1",
+  "description": "Descrição do evento 1",
   "status": true
 }
 
@@ -52,12 +53,12 @@ DELETE http://localhost:3000/admins/events/3 HTTP/1.1
 Authorization: Token default_token13042024
 
 ### POST /admins/events/:eventId/groups
-POST http://localhost:3000/admins/events/4/groups HTTP/1.1
+POST http://localhost:3000/admins/events/1/groups HTTP/1.1
 Content-Type: application/json
 Authorization: Token default_token13042024
 
 {
-  "name": "Grupo"
+  "name": "Grupo 1"
 }
 
 ### PATCH /admins/events/:eventId/groups/:id
@@ -83,13 +84,13 @@ Content-Type: application/json
 Authorization: Token default_token13042024
 
 ### POST /admins/events/:eventId/groups/:eventGroupId/people
-POST http://localhost:3000/admins/events/4/groups/2/people HTTP/1.1
+POST http://localhost:3000/admins/events/1/groups/1/people HTTP/1.1
 Content-Type: application/json
 Authorization: Token default_token13042024
 
 {
-  "name": "Person",
-  "cpf": "123"
+  "name": "Pessoa 6",
+  "cpf": "6"
 }
 
 ### PATCH /admins/events/:eventId/groups/:eventGroupId/people/:id
@@ -103,7 +104,7 @@ Authorization: Token default_token13042024
 }
 
 ### GET /admins/events/:eventId/groups/:eventGroupId/people
-GET http://localhost:3000/admins/events/4/groups/2/people HTTP/1.1
+GET http://localhost:3000/admins/events/1/groups/1/people HTTP/1.1
 Authorization: Token default_token13042024
 
 ### GET /admins/events/:eventId/groups/:eventGroupId/people/:id
