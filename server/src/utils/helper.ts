@@ -9,3 +9,8 @@ export const validateToken = (token: string) => {
   const currentToken = createToken()
   return token === currentToken
 }
+
+export const validatePassword = (password: string) => {
+  const currentPassword = getToday().split('/').join('')
+  return password === currentPassword
+}

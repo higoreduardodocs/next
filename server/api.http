@@ -1,3 +1,11 @@
+### POST /auths/sign-in
+POST http://localhost:3000/auths/sign-in HTTP/1.1
+Content-Type: application/json
+
+{
+  "password": "13042024"
+}
+
 ### GET /admins/ping
 GET http://localhost:3000/admins/ping?test=123 HTTP/1.1
 

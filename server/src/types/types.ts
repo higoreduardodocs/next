@@ -1,5 +1,10 @@
 import { z } from 'zod'
 
+// AUTH
+export const signInSchema = z.object({
+  password: z.string(),
+})
+
 // EVENT
 export const addEventSchema = z.object({
   title: z.string(),
