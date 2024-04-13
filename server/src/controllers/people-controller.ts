@@ -6,6 +6,7 @@ import {
   updatePersonSchema,
 } from '../types/types'
 import { add, getAll, getOne, remove, update } from '../services/people-service'
+import { decryptMatch } from '../utils/helper'
 
 export const addPerson: RequestHandler = async (req, res) => {
   const { eventId, eventGroupId } = req.params
@@ -81,7 +82,19 @@ export const searchPerson: RequestHandler = async (req, res) => {
   if (!query.success) return res.status(400).json({ error: 'Dados inválidos' })
 
   const person = await getOne({ eventId: parseInt(eventId), ...query.data })
-  if (person) return res.status(200).json({ person })
+  if (person && person.matched) {
+    const matchedId = decryptMatch(person.matched)
+    const personMatch = await getOne({
+      eventId: parseInt(eventId),
+      id: matchedId,
+    })
+    if (personMatch) {
+      return res.status(200).json({
+        person: { id: person.id, name: person.name },
+        personMatch: { id: personMatch.id, name: personMatch.name },
+      })
+    }
+  }
 
   return res.status(500).json({ error: 'Ocorreu um erro' })
 }
