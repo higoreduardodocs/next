@@ -42,7 +42,7 @@ export const getOneEvent: RequestHandler = async (req, res) => {
 export const removeEvent: RequestHandler = async (req, res) => {
   const { id } = req.params
   const removeEvent = await remove(parseInt(id))
-  if (removeEvent) return res.status(204)
+  if (removeEvent) return res.sendStatus(204)
 
   return res.status(500).json({ error: 'Ocorreu um erro' })
 }
