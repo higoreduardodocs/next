@@ -42,3 +42,7 @@ export const updatePersonSchema = z.object({
     .transform((value) => value.replaceAll('/.|-/gm', ''))
     .optional(),
 })
+
+export const searchPersonSchema = z.object({
+  cpf: z.string().transform((value) => value.replaceAll('/.|-/gm', '')),
+})

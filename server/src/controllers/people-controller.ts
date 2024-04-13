@@ -1,6 +1,10 @@
 import { RequestHandler } from 'express'
 
-import { addPersonSchema, updatePersonSchema } from '../types/types'
+import {
+  addPersonSchema,
+  searchPersonSchema,
+  updatePersonSchema,
+} from '../types/types'
 import { add, getAll, getOne, remove, update } from '../services/people-service'
 
 export const addPerson: RequestHandler = async (req, res) => {
@@ -67,6 +71,17 @@ export const removePerson: RequestHandler = async (req, res) => {
     id: parseInt(id),
   })
   if (removePerson) return res.sendStatus(204)
+
+  return res.status(500).json({ error: 'Ocorreu um erro' })
+}
+
+export const searchPerson: RequestHandler = async (req, res) => {
+  const { eventId } = req.params
+  const query = searchPersonSchema.safeParse(req.query)
+  if (!query.success) return res.status(400).json({ error: 'Dados inválidos' })
+
+  const person = await getOne({ eventId: parseInt(eventId), ...query.data })
+  if (person) return res.status(200).json({ person })
 
   return res.status(500).json({ error: 'Ocorreu um erro' })
 }

@@ -6,6 +6,7 @@ import http from 'http'
 import { requestInterceptor } from './utils/request-interceptor'
 import authRoutes from './routes/auth-route'
 import adminRoutes from './routes/admin-route'
+import publicRoutes from './routes/public-route'
 
 const app = express()
 
@@ -17,6 +18,7 @@ app.use('/*', requestInterceptor)
 
 app.use('/auths', authRoutes)
 app.use('/admins', adminRoutes)
+app.use('/', publicRoutes)
 
 const runServer = (port: number, server: http.Server) => {
   server.listen(port, () => {
