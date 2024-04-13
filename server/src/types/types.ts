@@ -27,3 +27,18 @@ export const addGroupSchema = z.object({
 export const updateGroupSchema = z.object({
   name: z.string(),
 })
+
+// PEOPLE
+export const addPersonSchema = z.object({
+  name: z.string(),
+  cpf: z.string().transform((value) => value.replaceAll('/.|-/gm', '')),
+})
+
+export const updatePersonSchema = z.object({
+  name: z.string().optional(),
+  cpf: z.string().optional(),
+  matched: z
+    .string()
+    .transform((value) => value.replaceAll('/.|-/gm', ''))
+    .optional(),
+})
