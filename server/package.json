@@ -4,7 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "build": "tsc",
+    "start": "node build/server.js",
+    "migrate:dev": "prisma migrate dev",
+    "migrate:deploy": "prisma migrate deploy",
+    "forever:start": "forever start build/server.js",
+    "forever:stop": "forever stopall"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
