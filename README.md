@@ -1,6 +1,4 @@
-SSR application developed in Next
-
-Applications developed in Next and Express, PostgreSQL
+Application developed in Next, Express and PostgreSQL
 
 > :fire: Development
 
