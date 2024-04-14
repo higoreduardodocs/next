@@ -5,7 +5,7 @@ GET http://localhost:3000/ping?test=123 HTTP/1.1
 GET http://localhost:3000/events/4 HTTP/1.1
 
 ### GET /events/:eventId/search?cpf=:cpf
-GET http://localhost:3000/events/4/search?cpf=123
+GET http://localhost:3000/events/1/search?cpf=1
 
 ### GET /admins/ping
 GET http://localhost:3000/admins/ping?test=123 HTTP/1.1
@@ -105,7 +105,7 @@ Authorization: Token default_token13042024
 
 ### GET /admins/events/:eventId/groups/:eventGroupId/people
 GET http://localhost:3000/admins/events/1/groups/1/people HTTP/1.1
-Authorization: Token default_token13042024
+Authorization: Token default_token14042024
 
 ### GET /admins/events/:eventId/groups/:eventGroupId/people/:id
 GET http://localhost:3000/admins/events/4/groups/2/people/1 HTTP/1.1
