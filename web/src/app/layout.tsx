@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Saira } from 'next/font/google'
 
 import DefaultProviders from '@/providers/default-provider'
+import Header from '@/components/header'
 import './globals.css'
 
 const saira = Saira({
@@ -21,9 +22,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <DefaultProviders>
-        <body className={saira.className}>{children}</body>
-      </DefaultProviders>
+      <body className={saira.className}>
+        <DefaultProviders>
+          <Header />
+          {children}
+        </DefaultProviders>
+      </body>
     </html>
   )
 }
