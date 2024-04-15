@@ -1,11 +1,16 @@
-# :desktop_computer: Next Application
+Application developed in Next and GraphQL
 
-Applications developed in Next and other auxiliary technologies
+> :fire: Development
 
-> SSR App:
+```
+  cd server && yarn && yarn start
+  cd web && yarn && yarn dev
+```
 
-- Anime vault: [ssr-app/anime-vault](https://github.com/higoreduardodocs/next/tree/ssr-app/anime-vault)
-- Hook form: [ssr-app/hook-form](https://github.com/higoreduardodocs/next/tree/ssr-app/hook-form)
-- Secret friend: [ssr-app/secret-friend](https://github.com/higoreduardodocs/next/tree/ssr-app/secret-friend)
+> :gear: Environment Variables
 
-> :copyright: [Higor Eduardo Docs](https://github.com/higoreduardodocs)
+- Server URL: NEXT_PUBLIC_API_URL `web`
+
+> :thought_balloon: `Fernanda Kipper`
+
+![Cover](./assets/cover.png)
