@@ -1,0 +1,28 @@
+:root {
+  --logo-color: #5d5d6d;
+  --bg-primary: #f0f0f5;
+  --bg-secondary: #f3f5f6;
+  --text-dark: #737380;
+  --text-black: #41414d;
+  --text-gray: #617480;
+  --text-shapes: #09090a;
+  --delete-color: #de3838;
+  --orange-low: #ffa585;
+  --blue: #115d8c;
+  --border-color: #a8a8b3;
+  --green-color: #51b853;
+  --light-color: #f5f5fa;
+  --shapes-light: #e9e9f0;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
