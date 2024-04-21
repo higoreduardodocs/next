@@ -2,7 +2,6 @@
 'use client'
 
 import { useCallback, useState } from 'react'
-import { useRouter } from 'next/router'
 import { signIn } from 'next-auth/react'
 import { FcGoogle } from 'react-icons/fc'
 import { FaGithub } from 'react-icons/fa'
@@ -11,8 +10,6 @@ import axios from 'axios'
 import Input from '@/components/input'
 
 export default function Auth() {
-  const router = useRouter()
-
   const [variant, setVariant] = useState('login')
 
   const [name, setName] = useState('')
@@ -29,14 +26,12 @@ export default function Auth() {
       await signIn('credentials', {
         email,
         password,
-        redirect: false,
-        callbackUrl: '/',
+        callbackUrl: '/profiles',
       })
-      router.push('/')
     } catch (error) {
       console.log(error)
     }
-  }, [email, password, router])
+  }, [email, password])
   const signUpCredential = useCallback(async () => {
     try {
       await axios.post('/api/sign-up', {
@@ -117,7 +112,7 @@ export default function Auth() {
               <div className="flex flex-row items-center gap-4 mt-8 justify-center">
                 <button
                   type="button"
-                  onClick={() => signIn('google', { callbackUrl: '/' })}
+                  onClick={() => signIn('google', { callbackUrl: '/profiles' })}
                   className="
                     flex items-center justify-center
                     w-10 h-10 bg-white
@@ -129,7 +124,7 @@ export default function Auth() {
                 </button>
                 <button
                   type="button"
-                  onClick={() => signIn('github', { callbackUrl: '/' })}
+                  onClick={() => signIn('github', { callbackUrl: '/profiles' })}
                   className="
                     flex items-center justify-center
                     w-10 h-10 bg-white
