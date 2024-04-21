@@ -12,7 +12,7 @@ interface IProps {
   onClick: () => void
 }
 
-const UserCard: React.FC<IProps> = ({ name, onClick }) => {
+const CardUser: React.FC<IProps> = ({ name, onClick }) => {
   const imgSrc = images[Math.floor(Math.random() * 4)]
 
   return (
@@ -48,4 +48,4 @@ const UserCard: React.FC<IProps> = ({ name, onClick }) => {
     </button>
   )
 }
-export default UserCard
+export default CardUser

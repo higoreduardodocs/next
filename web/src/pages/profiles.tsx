@@ -4,7 +4,7 @@ import { useCallback } from 'react'
 import { useRouter } from 'next/router'
 
 import useCurrentUser from '@/hooks/use-current-user'
-import UserCard from '@/components/ui/user-card'
+import CardUser from '@/components/ui/card-user'
 
 export async function getServerSideProps(context: NextPageContext) {
   const session = await getSession(context)
@@ -39,7 +39,7 @@ export default function Profiles() {
         </h1>
 
         <div className="flex items-center justify-center gap-8 mt-10">
-          <UserCard name={data?.currentUser?.name} onClick={selectProfile} />
+          <CardUser name={data?.currentUser?.name} onClick={selectProfile} />
         </div>
       </div>
     </main>
