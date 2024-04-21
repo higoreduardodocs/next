@@ -10,3 +10,5 @@ Applications developed in Next and other auxiliary technologies
 - Capputeeno: [ssr-app/capputeeno](https://github.com/higoreduardodocs/next/tree/ssr-app/capputeeno)
 
 > :copyright: [Higor Eduardo Docs](https://github.com/higoreduardodocs)
+
+callback google auh: http://localhost:3000/api/auth/callback/google

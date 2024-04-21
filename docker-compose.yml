@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  mongo:
+    image: prismagraphql/mongo-single-replica:4.4.3-bionic
+    container_name: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
+      MONGO_INITDB_DATABASE: netflix
+    ports:
+      - 27017:27017
