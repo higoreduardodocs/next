@@ -6,7 +6,7 @@ type Props = {
   onChange: any
 }
 
-export default function Input({ id, type, label, value, onChange }: Props) {
+const Input = ({ id, type, label, value, onChange }: Props) => {
   return (
     <div className="relative">
       <input
@@ -41,3 +41,4 @@ export default function Input({ id, type, label, value, onChange }: Props) {
     </div>
   )
 }
+export default Input

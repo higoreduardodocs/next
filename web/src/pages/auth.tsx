@@ -1,13 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
-'use client'
-
 import { useCallback, useState } from 'react'
 import { signIn } from 'next-auth/react'
 import { FcGoogle } from 'react-icons/fc'
 import { FaGithub } from 'react-icons/fa'
 import axios from 'axios'
 
-import Input from '@/components/input'
+import Input from '@/components/ui/input'
 
 export default function Auth() {
   const [variant, setVariant] = useState('login')

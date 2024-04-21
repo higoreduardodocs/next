@@ -1,6 +1,7 @@
-import useCurrentUser from '@/hooks/use-current-user'
 import { NextPageContext } from 'next'
 import { getSession } from 'next-auth/react'
+
+import Navbar from '@/components/navigation/navbar'
 
 export async function getServerSideProps(context: NextPageContext) {
   const session = await getSession(context)
@@ -20,7 +21,9 @@ export async function getServerSideProps(context: NextPageContext) {
 }
 
 export default function Home() {
-  const { data: user } = useCurrentUser()
-  console.log(user)
-  return <main>Home</main>
+  return (
+    <main className="pb-60">
+      <Navbar />
+    </main>
+  )
 }
