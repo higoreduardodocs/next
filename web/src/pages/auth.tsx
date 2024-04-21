@@ -1,11 +1,29 @@
 /* eslint-disable @next/next/no-img-element */
+import { NextPageContext } from 'next'
 import { useCallback, useState } from 'react'
-import { signIn } from 'next-auth/react'
+import { getSession, signIn } from 'next-auth/react'
 import { FcGoogle } from 'react-icons/fc'
 import { FaGithub } from 'react-icons/fa'
 import axios from 'axios'
 
 import Input from '@/components/ui/input'
+
+export async function getServerSideProps(context: NextPageContext) {
+  const session = await getSession(context)
+
+  if (session) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    }
+  }
+
+  return {
+    props: {},
+  }
+}
 
 export default function Auth() {
   const [variant, setVariant] = useState('login')
