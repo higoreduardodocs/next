@@ -7,7 +7,7 @@ export default async function handler(req, res) {
   await mongooseConnect()
 
   const { method } = req
-  console.log(method)
+
   try {
     if (method === 'GET') {
       const categories = await Category.find().populate('parent')
@@ -21,7 +21,7 @@ export default async function handler(req, res) {
         parent: parent || undefined,
         properties,
       })
-      return res.status(201).json(category)
+      return res.status(201).json({ category })
     }
 
     if (method === 'PUT') {
@@ -34,7 +34,7 @@ export default async function handler(req, res) {
           properties,
         }
       )
-      return res.status(200).json(category)
+      return res.status(200).json({ category })
     }
 
     if (method === 'DELETE') {
