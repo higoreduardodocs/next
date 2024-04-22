@@ -7,7 +7,6 @@ import House from '../icons/house'
 import Box from '../icons/box'
 import Bullets from '../icons/bullets'
 import List from '../icons/list'
-import Gear from '../icons/gear'
 import Logout from '../icons/logout'
 
 const Sidebar = ({ showSidebar }) => {
@@ -54,11 +53,6 @@ const Sidebar = ({ showSidebar }) => {
         <Link href="/orders" className={getClassName('/orders')}>
           <List />
           Orders
-        </Link>
-
-        <Link href="/settings" className={getClassName('/settings')}>
-          <Gear />
-          Settings
         </Link>
 
         <button onClick={logout} className={inactiveLink}>
