@@ -53,10 +53,11 @@ table.basic tr td {
   @apply p-1;
 }
 
-/* table.basic thead tr td {
+table.basic thead tr td {
   @apply bg-blue-200;
 }
 
+/*
 table.basic tr td {
   @apply border border-blue-200 p-1;
 } */

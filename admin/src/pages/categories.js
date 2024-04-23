@@ -115,7 +115,7 @@ function Categories({ swal }) {
 
           <tbody>
             {categories.map((item, i) => (
-              <tr key={i}>
+              <tr key={i} className="border-b border-blue-200">
                 <td>{item.name}</td>
                 <td>{item?.parent?.name ?? 'No parent'}</td>
                 <td className="flex flex-end items-center gap-1">
