@@ -1,14 +1,30 @@
-# :desktop_computer: Next Application
+Application developed in Next and Mongo
 
-Applications developed in Next and other auxiliary technologies
+> :fire: Development
 
-> SSR App:
+```
+  docker compose up -d && docker inspect mongo | grep IPAddress
+  npm install -g http-server
+  cd admin && yarn && yarn dev && http-server ./
+  cd web && yarn && yarn dev
+```
 
-- Anime vault: [ssr-app/anime-vault](https://github.com/higoreduardodocs/next/tree/ssr-app/anime-vault)
-- Hook form: [ssr-app/hook-form](https://github.com/higoreduardodocs/next/tree/ssr-app/hook-form)
-- Secret friend: [ssr-app/secret-friend](https://github.com/higoreduardodocs/next/tree/ssr-app/secret-friend)
-- Capputeeno: [ssr-app/capputeeno](https://github.com/higoreduardodocs/next/tree/ssr-app/capputeeno)
+> :gear: Environment Variables
 
-> :copyright: [Higor Eduardo Docs](https://github.com/higoreduardodocs)
+- Environment variable: NODE_ENV `web` `admin`
+- Mongo URL: MONGODB_URI `web` `admin`
+- Google ID: GOOGLE_ID `web` `admin`
+- Google secret: GOOGLE_SECRET `web` `admin`
+- Http server URL: NEXT_PUBLIC_API_URL `web`
+- Web URL: NEXT_PUBLIC_URL `web`
+- Stripe public key: STRIPE_PUBLIC_KEY `web`
+- Stripe secret key: STRIPE_SECRET_KEY `web`
 
-http://localhost:3000/api/auth/callback/google
+> :thought_balloon: `Dawind`
+
+![Cover](./assets/cover.png)
+![Cover](./assets/cover.gif)
+
+> :dart: Documentation
+
+- Google callback: `http://localhost:3000/api/auth/callback/google`
