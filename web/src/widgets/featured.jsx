@@ -1,5 +1,8 @@
+import { useContext } from 'react'
 import { styled } from 'styled-components'
+import { toast } from 'react-toastify'
 
+import { CartContext } from '@/contexts/cart-context'
 import Center from '@/components/ui/center'
 import ButtonLink from '@/components/ui/button-link'
 import Button from '@/components/ui/button'
@@ -59,8 +62,22 @@ const WrapperImage = styled.div`
 `
 
 const Featured = ({ product }) => {
-  const addFeaturedToCart = () => {}
-  console.log(`${process.env.NEXT_PUBLIC_API_URL}/public/${product.images[0]}`)
+  const { addProduct } = useContext(CartContext)
+
+  const addFeaturedToCart = () => {
+    addProduct(product._id)
+    toast.success('Product Add to Cart', {
+      position: 'bottom-right',
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'dark',
+    })
+  }
+
   return (
     <StyledSection>
       <Center>
