@@ -1,11 +1,13 @@
 import { mongooseConnect } from '@/libs/mongoose'
 import { Product } from '@/models/product-model'
 import Featured from '@/widgets/featured'
+import NewProducts from '@/widgets/new-products'
 
 export default function Home({ featuredProduct, newProducts }) {
   return (
     <main>
       <Featured product={featuredProduct} />
+      <NewProducts products={newProducts} />
     </main>
   )
 }
