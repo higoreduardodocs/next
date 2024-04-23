@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import axios from 'axios'
 
 import Spinner from '@/components/icons/spinner'
 
@@ -41,7 +42,7 @@ export default function Orders() {
 
           <tbody>
             {orders.map((item, i) => (
-              <tr key={i}>
+              <tr key={i} className="border-b border-blue-200">
                 <td>{new Date(item.createdAt).toLocaleString()}</td>
                 <td>
                   <b>Name:</b> {item.name} <br />
