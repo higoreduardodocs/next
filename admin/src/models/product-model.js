@@ -12,6 +12,7 @@ const ProductSchema = new Schema(
       default: [],
     },
     categoryProperties: { type: Object, default: {} },
+    featured: { type: Boolean, default: false },
   },
   { timestamps: true }
 )

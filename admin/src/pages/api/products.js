@@ -73,6 +73,19 @@ export default async function handler(req, res) {
       return res.status(200).json({ product })
     }
 
+    if (method === 'PATCH') {
+      const { _id } = req.body
+      console.log(_id)
+      await Product.updateOne({ featured: true }, [
+        { $set: { featured: { $eq: [false, '$featured'] } } },
+      ])
+      const product = await Product.updateOne({ _id }, [
+        { $set: { featured: { $eq: [false, '$featured'] } } },
+      ])
+
+      return res.status(200).json({ product })
+    }
+
     if (method === 'DELETE') {
       if (req?.query.id) {
         const product = await Product.findById(req?.query.id)

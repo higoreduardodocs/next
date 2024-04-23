@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react'
 import { withSwal } from 'react-sweetalert2'
+import { toast } from 'react-toastify'
 import axios from 'axios'
 
 import FormProduct from '@/components/forms/product'
 import Spinner from '@/components/icons/spinner'
 import Pencil from '@/components/icons/pencil'
 import Trash from '@/components/icons/trash'
+import Check from '@/components/icons/check'
+import Featured from '@/components/icons/featured'
 
 function Products({ swal }) {
   const [loading, setLoading] = useState(false)
@@ -61,6 +64,27 @@ function Products({ swal }) {
           }
         }
       })
+  }
+  const featuredProduct = async (item) => {
+    setLoading(true)
+    try {
+      await axios.patch('/api/products', { _id: item._id })
+      toast.success('Featured Successful', {
+        position: 'bottom-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'dark',
+      })
+      getProducts()
+    } catch (error) {
+      console.log(error)
+    } finally {
+      setLoading(false)
+    }
   }
   const getProducts = async () => {
     setLoading(true)
@@ -133,8 +157,11 @@ function Products({ swal }) {
 
           <tbody>
             {products.map((item, i) => (
-              <tr key={i}>
-                <td>{item.title}</td>
+              <tr key={i} className="border-b border-blue-200">
+                <td className="flex items-center gap-2">
+                  {item.featured && <Featured />}
+                  {item.title}
+                </td>
                 <td>{item?.category?.name}</td>
                 <td className="flex flex-end items-center gap-1">
                   <button
@@ -151,6 +178,14 @@ function Products({ swal }) {
                   >
                     <Trash />
                     Delete
+                  </button>
+
+                  <button
+                    onClick={() => featuredProduct(item)}
+                    className="btn-default"
+                  >
+                    <Check />
+                    Featured
                   </button>
                 </td>
               </tr>
