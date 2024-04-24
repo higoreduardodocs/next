@@ -1,14 +1,28 @@
-# :desktop_computer: Next Application
+Application developed in Next and Mongo
 
-Applications developed in Next and other auxiliary technologies
+> :fire: Development
 
-> SSR App:
+```
+  docker compose up -d && docker inspect mongo | grep IPAddress
+  cd web && yarn && yarn prisma db push && yarn prisma db seed && yarn dev
+```
 
-- Anime vault: [ssr-app/anime-vault](https://github.com/higoreduardodocs/next/tree/ssr-app/anime-vault)
-- Hook form: [ssr-app/hook-form](https://github.com/higoreduardodocs/next/tree/ssr-app/hook-form)
-- Secret friend: [ssr-app/secret-friend](https://github.com/higoreduardodocs/next/tree/ssr-app/secret-friend)
-- Capputeeno: [ssr-app/capputeeno](https://github.com/higoreduardodocs/next/tree/ssr-app/capputeeno)
+> :gear: Environment Variables
 
-> :copyright: [Higor Eduardo Docs](https://github.com/higoreduardodocs)
+- Mongo URL: DATABASE_URL `web`
+- JWT secret: NEXTAUTH_JWT_SECRET `web`
+- Next secret: NEXTAUTH_SECRET `web`
+- GitHub ID: GITHUB_ID `web`
+- GitHub secret: GITHUB_SECRET `web`
+- Google ID: GOOGLE_CLIENT_ID `web`
+- Google secret: GOOGLE_CLIENT_SECRET `web`
 
-callback google auh: http://localhost:3000/api/auth/callback/google
+> :thought_balloon: `Antonio`
+
+![Cover](./assets/cover.png)
+
+> :dart: Documentation
+
+- Google callback: `http://localhost:3000/api/auth/callback/google`
+- Github callback: `http://localhost:3000`
+- Lint: `"rules": {"@next/next/no-img-element": "off"}`
