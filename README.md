@@ -9,6 +9,7 @@ Applications developed in Next and other auxiliary technologies
 > Ecommerce App:
 
 - First realease: [ecommerce-app/first-release](https://github.com/higoreduardodocs/next/tree/ecommerce-app/first-release)
+- Second realease: [ecommerce-app/second-release](https://github.com/higoreduardodocs/next/tree/ecommerce-app/second-realease)
 
 > SSR App:
 
