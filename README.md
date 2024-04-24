@@ -1,20 +1,32 @@
-# :desktop_computer: Next Application
+Application developed in Next and Strapi
 
-Applications developed in Next and other auxiliary technologies
+> :fire: Development
 
-> Clone App:
+```
+  cd web && yarn && yarn dev
+  cd server && yarn && yarn develop
+```
 
-- Netflix app: [clone-app/netflix-app](https://github.com/higoreduardodocs/next/tree/clone-app/netflix-app)
+> :gear: Environment Variables
 
-> Ecommerce App:
+- Api Token: NEXT_STRAPI_API_TOKEN `web`
+- Api Url: NEXT_STRAPI_API_URL `web`
+- Stripe Public Key: NEXT_STRIPE_PUBLIC_KEY `web`
+- Host: HOST `server`
+- Port: PORT `server`
+- Keys: APP_KEYS `server`
+- Salt: API_TOKEN_SALT `server`
+- Secret: ADMIN_JWT_SECRET `server`
+- Token salt: TRANSFER_TOKEN_SALT `server`
+- Database: DATABASE_CLIENT `server`
+- Database filename: DATABASE_FILENAME `server`
+- Database secret: JWT_SECRET `server`
+- Cloudinary name: CLOUDINARY_NAME `server`
+- Cloudinary key: CLOUDINARY_KEY `server`
+- Cloudinary secret: CLOUDINARY_SECRET `server`
+- Stripe Private Key: STRIPE_PRIVATE_KEY `server`
+- Client Url: CLIENT_URL `server`
 
-- First realease: [ecommerce-app/first-release](https://github.com/higoreduardodocs/next/tree/ecommerce-app/first-release)
+> :thought_balloon: `JS Dev Hindi`
 
-> SSR App:
-
-- Anime vault: [ssr-app/anime-vault](https://github.com/higoreduardodocs/next/tree/ssr-app/anime-vault)
-- Capputeeno: [ssr-app/capputeeno](https://github.com/higoreduardodocs/next/tree/ssr-app/capputeeno)
-- Hook form: [ssr-app/hook-form](https://github.com/higoreduardodocs/next/tree/ssr-app/hook-form)
-- Secret friend: [ssr-app/secret-friend](https://github.com/higoreduardodocs/next/tree/ssr-app/secret-friend)
-
-> :copyright: [Higor Eduardo Docs](https://github.com/higoreduardodocs)
+![Cover](./assets/cover.png)
