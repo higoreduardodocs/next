@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Open_Sans } from 'next/font/google'
 
 import Navbar from './(components)/navigation/navbar'
+import Footer from './(components)/navigation/footer'
 import './globals.css'
 
 const openSans = Open_Sans({ subsets: ['latin'] })
@@ -21,6 +22,7 @@ export default function RootLayout({
       <body className={openSans.className} suppressHydrationWarning={true}>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   )
