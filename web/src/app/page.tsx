@@ -5,6 +5,8 @@ import Trending from './(home)/trending'
 import Tech from './(home)/tech'
 import Sidebar from './(components)/navigation/sidebar'
 import Travel from './(home)/travel'
+import Other from './(home)/other'
+import Subscribe from './(components)/ui/subscribe'
 
 async function getPosts() {
   const posts = await prisma.post.findMany({})
@@ -50,6 +52,10 @@ export default async function Home() {
         <div className="basis-3/4">
           <Tech techPosts={techPosts} />
           <Travel travelPosts={travelPosts} />
+          <Other otherPosts={otherPosts} />
+          <div className="md:block hidden">
+            <Subscribe />
+          </div>
         </div>
         <div className="basis-1/4">
           <Sidebar />
