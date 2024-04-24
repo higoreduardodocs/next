@@ -5,9 +5,7 @@ import Subscribe from '../ui/subscribe'
 import Ad2 from '/public/assets/ad-2.png'
 import AboutProfile from '/public/assets/about-profile.jpg'
 
-type Props = {}
-
-const Sidebar = (props: Props) => {
+const Sidebar = () => {
   return (
     <section className="my-3">
       <h4 className="bg-wh-900 py-3 px-5 text-wh-50 text-xs font-bold text-center">
