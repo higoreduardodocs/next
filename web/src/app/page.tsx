@@ -2,6 +2,7 @@ import { Post } from '@prisma/client'
 
 import { prisma } from '@/libs/prisma'
 import Trending from './(home)/trending'
+import Tech from './(home)/tech'
 
 async function getPosts() {
   const posts = await prisma.post.findMany({})
@@ -43,6 +44,11 @@ export default async function Home() {
   return (
     <main className="px-10 py-4 leading-7">
       <Trending trendingPosts={trendingPosts} />
+      <div className="md:flex gap-5 mb-5">
+        <div className="basis-3/4">
+          <Tech techPosts={techPosts} />
+        </div>
+      </div>
     </main>
   )
 }
