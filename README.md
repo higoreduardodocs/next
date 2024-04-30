@@ -3,8 +3,9 @@ Application developed in Next, Express and PostgreSQL
 > :fire: Development
 
 ```
-  cd web && yarn dev
-  cd server && yarn migrate:dev && yarn dev
+  docker compose up -d && docker inspect postgres | grep IPAddress
+  cd web && yarn && yarn dev
+  cd server && yarn && yarn migrate:dev && yarn dev
 ```
 
 > :fire: Production
