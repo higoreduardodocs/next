@@ -1,4 +1,5 @@
 import { ClerkLoaded, ClerkLoading, SignUp } from "@clerk/nextjs";
+import { Loader2 } from "lucide-react";
 import Image from "next/image";
 
 export default function SignInPage() {
@@ -15,7 +16,9 @@ export default function SignInPage() {
           <ClerkLoaded>
             <SignUp path="/sign-up" />
           </ClerkLoaded>
-          <ClerkLoading>Loading...</ClerkLoading>
+          <ClerkLoading>
+            <Loader2 className="animate-spin text-muted-foreground" />
+          </ClerkLoading>
         </div>
       </div>
       <div className="h-full bg-blue-600 hidden lg:flex items-center justify-center">
