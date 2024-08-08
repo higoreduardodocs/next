@@ -3,6 +3,7 @@ import { handle } from "hono/vercel";
 import { HTTPException } from "hono/http-exception";
 
 // import authors from "./authors";
+import summary from "./summary";
 import accounts from "./accounts";
 import categories from "./categories";
 import transactions from "./transactions";
@@ -21,6 +22,7 @@ app.onError((err, c) => {
 
 // app.route("/authors", authors);
 const routes = app
+  .route("/summary", summary)
   .route("/accounts", accounts)
   .route("/categories", categories)
   .route("/transactions", transactions);
