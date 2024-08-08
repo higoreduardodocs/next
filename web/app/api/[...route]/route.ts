@@ -5,6 +5,7 @@ import { HTTPException } from "hono/http-exception";
 // import authors from "./authors";
 import accounts from "./accounts";
 import categories from "./categories";
+import transactions from "./transactions";
 
 export const runtime = "edge";
 
@@ -21,7 +22,8 @@ app.onError((err, c) => {
 // app.route("/authors", authors);
 const routes = app
   .route("/accounts", accounts)
-  .route("/categories", categories);
+  .route("/categories", categories)
+  .route("/transactions", transactions);
 
 export const GET = handle(app);
 export const POST = handle(app);
