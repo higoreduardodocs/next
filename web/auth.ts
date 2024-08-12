@@ -4,6 +4,7 @@ import { PrismaAdapter } from "@auth/prisma-adapter";
 import authConfig from "@/auth.config";
 import { db } from "@/lib/db";
 import { getUserById } from "@/data/user";
+import { getAccountByUserId } from "@/data/account";
 import { getTwoFactorConfirmationByUserId } from "@/data/two-factor-confirmation";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
@@ -30,7 +31,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       if (!existingUser || !existingUser.emailVerified) return false;
 
       // TODO: Add 2FA check
-      if (existingUser.isTwoFactorEnable) {
+      if (existingUser.isTwoFactorEnabled) {
         const twoFactorConfirmation = await getTwoFactorConfirmationByUserId(
           existingUser.id
         );
@@ -55,7 +56,10 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       }
 
       if (session.user) {
-        session.user.isTwoFactorEnable = token.isTwoFactorEnable;
+        session.user.isTwoFactorEnabled = token.isTwoFactorEnabled;
+        session.user.name = token.name;
+        // session.user.email = token.email;
+        session.user.isOauth = token.isOauth;
       }
 
       return session;
@@ -67,8 +71,13 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
       if (!existingUser) return token;
 
+      const existingAccount = await getAccountByUserId(existingUser.id);
+
+      token.isOauth = !!existingAccount;
       token.role = existingUser.role;
-      token.isTwoFactorEnable = existingUser.isTwoFactorEnable;
+      token.isTwoFactorEnabled = existingUser.isTwoFactorEnabled;
+      token.name = existingUser.name;
+      token.email = existingUser.email;
 
       return token;
     },

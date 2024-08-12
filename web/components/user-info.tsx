@@ -43,9 +43,9 @@ export const UserInfo = ({ user, label }: UserInfoProps) => {
           <p className="text-sm font-medium">2FA</p>
           <p className="truncate text-xs max-w-[180px] font-mono bg-slate-100">
             <Badge
-              variant={user?.isTwoFactorEnable ? "success" : "destructive"}
+              variant={user?.isTwoFactorEnabled ? "success" : "destructive"}
             >
-              {user?.isTwoFactorEnable ? "ON" : "OFF"}
+              {user?.isTwoFactorEnabled ? "ON" : "OFF"}
             </Badge>
           </p>
         </div>
