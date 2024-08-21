@@ -14,6 +14,7 @@ Applications developed in Next and other auxiliary technologies
 > SSR App:
 
 - Anime vault: [ssr-app/anime-vault](https://github.com/higoreduardodocs/next/tree/ssr-app/anime-vault)
+- Auth: [ssr-app/auth-tutorial](https://github.com/higoreduardodocs/next/tree/ssr-app/auth-tutorial)
 - Blog AI: [ssr-app/blog-ai](https://github.com/higoreduardodocs/next/tree/ssr-app/blog-ai)
 - Capputeeno: [ssr-app/capputeeno](https://github.com/higoreduardodocs/next/tree/ssr-app/capputeeno)
 - Finance: [ssr-app/finance-tutorial](https://github.com/higoreduardodocs/next/tree/ssr-app/finance-tutorial)
